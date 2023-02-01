@@ -173,7 +173,7 @@ length(which(bd_rh$PriorYearsOfExperience < 10)) / length(bd_rh$PriorYearsOfExpe
 length(which(bd_rh$Age < 30)) / length(bd_rh$Age)
 
 # # Educação
-summary(dados_rh$Education)
+summary(bd_rh$Education)
 length(which(bd_rh$Education == 3)) / length(bd_rh$Education)
 length(which(bd_rh$Education == 4)) / length(bd_rh$Education)
 
@@ -189,100 +189,104 @@ ggplot(data = subset(bd_rh, !is.na(Gender)), aes(Gender, MonthlyIncome, fill = G
 
 # As mulheres ganham um pouco mais, em média, desconsiderando todos os outros fatores.
 
-# Função
-ggplot(data = subset(bd_rh, !is.na(JobRole))) + geom_boxplot(aes(JobRole, MonthlyIncome)) +
-  ggtitle("Salário Mensal Por Função")
-
-ggplot(data = subset(bd_rh, !is.na(JobRole))) + geom_boxplot(aes(JobRole, AgeStartedWorking)) +
-  ggtitle("Idade Que Iniciou na Função")
-
-ggplot(data = subset(bd_rh, !is.na(JobRole))) + geom_boxplot(aes(JobRole, Age)) +
-  ggtitle("Idade Por Função")
-
-ggplot(data = subset(bd_rh, !is.na(JobRole))) + geom_boxplot(aes(JobRole, YearsAtCompany)) +
-  ggtitle("Tempo de Empresa (em anos)")
-
-ggplot(data = na.omit(bd_rh)) + geom_bar(aes(JobRole, fill = Education), position = "fill") +
-  ggtitle("Nível de Educação Por Função") + 
-  ylab("Proportion")
-
 ##### 7 - Modelagem Preditiva ##### 
 
-# Vamos concentrar nosso trabalho em tentar ajudar o RH a recrutar melhor visando evitar atritos 
-# e, consequentemente, demissões.
+# Objetivo inicial é criar 4 versões do modelo preditivo com o algoritmo de Regressão Logística
 
-# Criaremos 5 versões do modelo e para cada um vamos explorar as opções e interpretar o resultado.
 
 # Primeira versão do modelo com algumas variáveis
+# Esse modelo é como um balizador sem a divisão de treino e teste
 modelo_v1 <- glm(Attrition ~ Age + Department + DistanceFromHome + Employee.Source + 
-                   JobRole + MaritalStatus + AverageTenure + PriorYearsOfExperience + Gender + 
-                   Education + EducationField, 
+                 JobRole + MaritalStatus + AverageTenure + PriorYearsOfExperience +                         Gender + Education + EducationField, 
                  family = binomial, 
                  data = bd_rh)
 
 summary(modelo_v1)
-?vif
-vif(modelo_v1)
 
-# Vamos dividir os dados em treino e teste. Vamos trabalhar com os dados sem registros de demitidos.
-set.seed(2004)
+# Análise por VIF
+# VIF é uma função determina a correlação entre variáveis
+# Neste caso, analisamos qual variável impacta mais na variável preditora, neste caso o Atrittion
+# Aqui vemos que o JobRole, AverageTenure e PiorYearsofExperience são as variáveis mais influntes no modelo
+# Basicamente é o cargo, estabilidade média no mesmo emprego e anos de experiência anteriores
+# Ou seja, o perfil é de um profissional mais senior e estavél no emprego
+vif_modelo1 <- vif(modelo_v1)
+View(vif_modelo1)
+
+# Vamos dividir os dados em treino e teste. 
+
+# Vamos trabalhar com os dados sem registros de demitidos.
+dados_rh_1 <- bd_rh[bd_rh$Attrition != 'Termination',]
+dados_rh_1 <- droplevels(dados_rh_1)
+
+# Divisão de treino e teste
 index_treino <- sample.split(Y = dados_rh_1$Attrition, SplitRatio = 0.7)
 dados_rh_1_treino <- subset(dados_rh_1, train = T)
 dados_rh_1_teste <- subset(dados_rh_1, train = F)
 
 # Segunda versão do modelo com dados de treino
-modelo_v2 <- glm(Attrition ~ Age + Department + DistanceFromHome + `Employee Source` + 
+modelo_v2 <- glm(Attrition ~ Age + Department + DistanceFromHome + Employee.Source + 
                    JobRole + MaritalStatus + AverageTenure + PriorYearsOfExperience + Gender + 
                    Education + EducationField, 
                  family = binomial, 
                  data = dados_rh_1_treino)
 
 summary(modelo_v2)
-vif(modelo_v2)
 
-# Previsões
+# Análise VIF Modelo 2
+# Os dados permanceram os mesmos que o modelo 1.
+# A explicação é que removemos poucas linhas (removido pessoas demitidas) 
+# e mantivemos basicamente os mesmos atributos que o modelo anterior
+vif_modelo2 <- vif(modelo_v2)
+View(vif_modelo2)
+
+# Previsões modelo 2
 threshold <- 0.5
 previsoes_v2 <- predict(modelo_v2, type = 'response', newdata = dados_rh_1_teste)
 previsoes_finais_v2 <- ifelse(previsoes_v2 > threshold, 'Voluntary Resignation', 'Current employee')
 table(dados_rh_1_teste$Attrition, previsoes_finais_v2)
 
 # Terceira versão do modelo com dados de treino e sem variáveis de educação
-modelo_v3 <- glm(Attrition ~ Age + Department + DistanceFromHome + `Employee Source` + 
+modelo_v3 <- glm(Attrition ~ Age + Department + DistanceFromHome + Employee.Source + 
                    JobRole + MaritalStatus + AverageTenure + PriorYearsOfExperience + Gender, 
                  family = binomial, 
                  data = dados_rh_1_treino)
 
 summary(modelo_v3)
-vif(modelo_v3)
 
-# Previsões
+# Análise VIF Modelo 3
+# Os primeiros registros se manteram (obRole, AverageTenure e PiorYearsofExperience)
+# Contudo tivemos uma queda em Departament ao remover Education do treinamento do modelo
+vif_modelo3 <- vif(modelo_v3)
+View(vif_modelo3)
+
+# Previsões modelo 3
 threshold <- 0.5
 previsoes_v3 <- predict(modelo_v3, type = 'response', newdata = dados_rh_1_teste)
 previsoes_finais_v3 <- ifelse(previsoes_v3 > threshold, 'Voluntary Resignation', 'Current employee')
 table(dados_rh_1_teste$Attrition, previsoes_finais_v3)
 
 # Quarta versão do modelo com dados de treino e sem variáveis de educação e genero
-modelo_v4 <- glm(Attrition ~ Age + Department + DistanceFromHome + `Employee Source` + 
+modelo_v4 <- glm(Attrition ~ Age + Department + DistanceFromHome + Employee.Source + 
                    JobRole + MaritalStatus + AverageTenure + PriorYearsOfExperience, 
                  family = binomial, 
                  data = dados_rh_1_treino)
 
 summary(modelo_v4)
-vif(modelo_v4)
 
-# Previsões
+# Análise VIF Modelo 4
+# Pouca mudança em relação a V2 do modelo
+vif_modelo4 <- vif(modelo_v4)
+View(vif_modelo4)
+
+# Previsões modelo 4
 threshold <- 0.5
 previsoes_v4 <- predict(modelo_v4, type = 'response', newdata = dados_rh_1_teste)
 previsoes_finais_v4 <- ifelse(previsoes_v4 > threshold, 'Voluntary Resignation', 'Current employee')
 table(dados_rh_1_teste$Attrition, previsoes_finais_v4)
 
-# Quinta versão do modelo com dados de treino e sem variáveis de educação, genero e outro algoritmo
-?rpart
-modelo_v5 <- rpart(Attrition ~ Age + Department + DistanceFromHome + JobRole + MaritalStatus + 
-                     AverageTenure + PriorYearsOfExperience, 
-                   method = "class", 
-                   control = rpart.control(minsplit = 500, cp = 0),
-                   data = dados_rh_1_treino)
+# Conclusão final
 
-summary(modelo_v5)
-rpart.plot(modelo_v5)
+# Com base nas informações, o modelo 2 teve um desempenho mais interessante na visão da análise de variáveis
+# É um proposta de solução, mas seria interessante balancear as classes e criar varíaveis dummy 
+# Com essas etapas, o modelo teria um resultado mais assertivo, contudo o objetivo final de analisar quais 
+# atributos mais influenciam no modelo foi feito e isso demonstra as possibilidades com Machine Learning.
