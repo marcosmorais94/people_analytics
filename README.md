@@ -37,15 +37,15 @@ Crédito: @denistanjingyu
 | HourlyRate  | Taxa de pagamento por hora  |   |
 | MonthlyIncome  | Salário mensal  |   |
 | MonthlyRate  | Taxa de pagamento por Mês  |   |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
+| OverTime  | Indicador se houve Hora-Extra  | Yes/No  |
+| PercentSalaryHike  | Percentual de aumento do salário comparado ao ano anterior  |   |
+| StandardHours  | Horas trabalhadas de acordo com o contrato  |   |
+| StockOptionLevel  | Proporção da renda que o colaborador gasta na compra de ações da empresa.  | 0-3 (0 indica que o funcionário não comprou as ações da empresa, um número maior significa uma proporção maior)  |
+| EnvironmentSatisfaction  | Content Cell  | Content Cell  |
+| JobInvolvement  | Content Cell  | Content Cell  |
+| JobLevel  | Content Cell  | Content Cell  |
+| JobSatisfaction  | Content Cell  | Content Cell  |
+| PerformanceRating  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  |
