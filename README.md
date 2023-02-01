@@ -25,18 +25,18 @@ Crédito: @denistanjingyu
 | JobRole  | Cargo  | Healthcare Representative / Human Resources / Laboratory Technician / Manager / Manufacturing Director / Research Director / Research Scientist / Sales Executive / Sales Representative  |
 | MaritalStatus  | Estado civil  | Content Cell  |
 | NumCompaniesWorked  | Número total de empresas o colaborador trabalhou para antes de seu trabalho atual  |   |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
+| PriorYearsOfExperience  | Número de anos de trabalho experiência antes do trabalho atual.  | TotalWorkingYears - YearsAtCompany  |
+| TotalWorkingYears  | Ttoal de anos de experiência  |  |
+| TrainingTimesLastYear  | Número de trabalho relacionado treinamentos frequentados pelo empregado no ano passado  |   |
+| YearsAtCompany  | Total de anos na empresa atual |   |
+| YearsInCurrentRole  | Total de ano no cargo atual  |   |
+| YearsSinceLastPromotion  | Total de anos desde a última promoção  |   |
+| YearsWithCurrManager  | Total de anos com o atual líder  |   |
+| Employee.Source  | Fonte de recrutamento do colaborador  | Referral / Company Website / Seek / LinkedIn / Adzuna / Indeed / Glassdoor / Jora / Recruit.net  |
+| DailyRate  | Taxa de pagamento por dia  |   |
+| HourlyRate  | Taxa de pagamento por hora  |   |
+| MonthlyIncome  | Salário mensal  |   |
+| MonthlyRate  | Taxa de pagamento por Mês  |   |
 | Content Cell  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  |
