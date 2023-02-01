@@ -19,10 +19,10 @@
 | DistanceFromHome  | Distância em KM entre trabalho e casa  |   |
 | Education  | Nível de escolaridade  | 1: Below college 2: College 3: Bachelor 4: Master 5: Doctor  |
 | EducationField  | Área de Atuação  | Human Resources / LifeSciences / Marketing / Medical / Technical Degree / Other  |
-| Gender  | Genêro  | Female / Male  |
+| Gender  | Gênero  | Female / Male  |
 | JobRole  | Cargo  | Healthcare Representative / Human Resources / Laboratory Technician / Manager / Manufacturing Director / Research Director / Research Scientist / Sales Executive / Sales Representative  |
-| MaritalStatus  | Content Cell  | Content Cell  |
-| NumCompaniesWorked  | Content Cell  | Content Cell  |
+| MaritalStatus  | Estado civil  | Content Cell  |
+| NumCompaniesWorked  | Número total de empresas o colaborador trabalhou para antes de seu trabalho atual  |   |
 | Content Cell  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  |
