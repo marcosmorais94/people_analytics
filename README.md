@@ -41,16 +41,10 @@ Crédito: @denistanjingyu
 | PercentSalaryHike  | Percentual de aumento do salário comparado ao ano anterior  |   |
 | StandardHours  | Horas trabalhadas de acordo com o contrato  |   |
 | StockOptionLevel  | Proporção da renda que o colaborador gasta na compra de ações da empresa.  | 0-3 (0 indica que o funcionário não comprou as ações da empresa, um número maior significa uma proporção maior)  |
-| EnvironmentSatisfaction  | Content Cell  | Content Cell  |
-| JobInvolvement  | Content Cell  | Content Cell  |
-| JobLevel  | Content Cell  | Content Cell  |
-| JobSatisfaction  | Content Cell  | Content Cell  |
-| PerformanceRating  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
+| EnvironmentSatisfaction  | Grau em que o colaborador está satisfeito com o ambiente de trabalho.  | 1-4 (um número maior indica maior satisfação)  |
+| JobInvolvement  | Grau em que o colaborador se identifica com o seu trabalho.  | 1-4 (um número maior indica maior satisfação)  |
+| JobLevel  | A avaliação do colaborador sobre a dificuldade de seu trabalho.  | 1-4 (um número maior indica maior satisfação)  |
+| JobSatisfaction  | Grau de satisfação com o trabalho  | 1-4 (um número maior indica maior satisfação)  |
+| PerformanceRating  | Content Cell  | 1-4 (um número maior indica maior satisfação)  |
+| RelationshipSatisfaction  | Content Cell  | 1-4 (um número maior indica maior satisfação)  |
+| WorkLifeBalance  | Content Cell  | 1-4 (um número maior indica maior satisfação)  |
