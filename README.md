@@ -8,6 +8,8 @@
 
 
 ## Dicionário de Dados
+Crédito: @denistanjingyu
+
 | Variável  | Descrição | Métrica
 | ------------- | ------------- | ------------- |
 | Age  | Idade do colaborador  |   |
