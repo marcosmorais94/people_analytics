@@ -45,6 +45,6 @@ Crédito: @denistanjingyu
 | JobInvolvement  | Grau em que o colaborador se identifica com o seu trabalho.  | 1-4 (um número maior indica maior satisfação)  |
 | JobLevel  | A avaliação do colaborador sobre a dificuldade de seu trabalho.  | 1-4 (um número maior indica maior satisfação)  |
 | JobSatisfaction  | Grau de satisfação com o trabalho  | 1-4 (um número maior indica maior satisfação)  |
-| PerformanceRating  | Content Cell  | 1-4 (um número maior indica maior satisfação)  |
-| RelationshipSatisfaction  | Content Cell  | 1-4 (um número maior indica maior satisfação)  |
-| WorkLifeBalance  | Content Cell  | 1-4 (um número maior indica maior satisfação)  |
+| PerformanceRating  | Nota dada ao colaborador por seu líder com base em seu desempenho no trabalho  | 1-4 (um número maior indica maior satisfação)  |
+| RelationshipSatisfaction  | Grau de satisfação com o ambiente de trabalho  | 1-4 (um número maior indica maior satisfação)  |
+| WorkLifeBalance  |Grau de satisfação para o work-life balance | 1-4 (um número maior indica maior satisfação)  |
