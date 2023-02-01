@@ -12,11 +12,11 @@
 | ------------- | ------------- | ------------- |
 | Age  | Idade do colaborador  |   |
 | AgeStartedWorking | Idade na qual o colaborador começou a trabalhar  | (Age - TotalWorkingYears)  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
+| Attrition  | Status do colaborador(Preditora) | Current Employee / Voluntary Resignation / Termination  |
+| AverageTenure  | Tempo médio de permanência no trabalho  | (PriorYearsOfExperience / NumCompaniesWorked)  |
+| BusinessTravel  | Indica viagens internacionais a trabalho  | Travel Frequently / Travel_Rarely / Non_Travel  |
+| Department  | Content Cell  | Content Cell  |
+| DistanceFromHome  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  |
