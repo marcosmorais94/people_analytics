@@ -1,7 +1,7 @@
 ![WeWork_PrivateOffice-1440x810](https://user-images.githubusercontent.com/91103250/215613322-1dfc6554-270f-4b02-bf7a-7d6cd7e255bd.jpg)
 
 # Modelo Preditivo - RH Analytics
-Essa é um proposta de análise preditiva com base no dataset RH Analytics da IBM. Com base neste dataset, foi feita uma análise preditiva com base no atibuto que identifica se o colaborador pediu demissão ou continua empregado na empresa. Com essas informações, foi possível identificar os atributos da base que possuem correlação com a variável preditora.
+Essa é um proposta de análise preditiva com base no dataset RH Analytics da IBM. Com base neste dataset, foi feita uma análise preditiva com base no atibuto que identifica se o colaborador pediu demissão ou continua empregado na empresa. Com essas informações, foi possível identificar os atributos da base que possuem alguma correlação com a variável preditora.
 
 ## O que são as análises de People Analytics
 People analytics é um processo de coleta e análise de dados voltado para a gestão de pessoas em empresas. O conceito nasce a partir da ideia de big data, que consiste na coleta, armazenamento e análise de um volume imenso de dados. Este tipo de análise permite contratações mais alinhadas com as políticas da empresa, identifica falhas nos processos de RH, renteção de talentos e etc.
